@@ -1,10 +1,10 @@
 require_relative('../db/sql_runner')
-require_relative('/team')
+require_relative('team')
 require_relative('match')
 
 class Result
 
-  attr_reader: :id, :team_id, :match_id
+  attr_reader :id, :team_id, :match_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id'].to_i
