@@ -35,7 +35,7 @@ def self.delete_all
 end
 
 def delete()
-  sql = "DELETE * FROM teams WHERE id = $1"
+  sql = "DELETE FROM teams WHERE id = $1"
   values = [@id]
   SqlRunner.run(sql, values)
 end
@@ -64,8 +64,8 @@ def self.find_by_id(id)
   sql = "SELECT * FROM teams WHERE id = $1"
   values = [id]
   team_data = SqlRunner.run(sql, values)
-  results = team_Data.map{ |team| Team.new(team)}
-  return results
+  results = team_data.map{ |team| Team.new(team)}
+  return results.first
 end
 
 def matches_played

@@ -32,6 +32,13 @@ class Match
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM matches"
+    matches = SqlRunner.run(sql)
+    result = matches.map{ |match| Match.new(match)}
+    return result
+  end
+
   def teams
       sql = "SELECT matches.* FROM matches
              INNER JOIN results ON results.match_id = match_id WHERE team_id = $1"

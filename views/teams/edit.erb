@@ -1,0 +1,13 @@
+<form action="/teams/<%= @team.id %>" method="post">
+  <label for="team_name_field">Team Name</label>
+  <input type="text" id = "team_name_field" name="name" value="<%= @team.name %>">
+
+  <label for="wins_field">Wins</label>
+  <input type="text" id = "wins_field" name = "wins" value="<%= @team.wins %>">
+
+  <label for="losses_field">Losses</label>
+  <input type="text" id = "losses_field" name="losses" value="<%= @team.losses %>">
+
+  <input type="submit" value="Edit Team">
+
+</form>
