@@ -48,4 +48,11 @@ class Match
              return results
     end
 
+    def self.find_by_id(id)
+      sql = "SELECT * FROM matches WHERE id = $1"
+      values = [id]
+      match_data = SqlRunner.run(sql, values)
+      results = match_data.map{ |match| Match.new(match)}
+      return results.first
+    end
 end

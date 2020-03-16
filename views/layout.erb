@@ -4,6 +4,18 @@
     <title>Basketball!</title>
   </head>
   <body>
+    <nav>
+      <details>
+        <summary>Teams</summary>
+          <a href="/teams"> View All Teams</a>
+          <a href="/teams/new">Create New Team</a>
+      </details>
+      <details>
+        <summary>Matches</summary>
+          <a href="/matches">View All Matches</a>
+          <a href="/matches/new">Create New Match</a>
+      </details>
+    </nav>
     <%= yield %>
   </body>
 </html>

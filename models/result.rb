@@ -4,27 +4,43 @@ require_relative('match')
 
 class Result
 
-  attr_reader :id, :team_id, :match_id, :winner
+  attr_reader :id, :team_id, :match_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id'].to_i
     @team_id = options['team_id'].to_i
     @match_id = options['match_id'].to_i
-    @winner = options['winner']
   end
 
   def save()
     sql = "INSERT INTO results(
           team_id,
-          match_id,
-          winner) VALUES(
+          match_id)
+           VALUES(
             $1,
-            $2,
-            $3
+            $2
             ) RETURNING *"
-    values = [@team_id, @match_id, @winner]
+    values = [@team_id, @match_id]
     match_result = SqlRunner.run(sql, values)
     @id = match_result.first['id'].to_i
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM results"
+    SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM results WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def winner()
+    sql = "SELECT * FROM results WHERE team_id = $1"
+    values = [@team_id]
+    team = SqlRunner.run(sql, values).first
+    return Team.new(team)
   end
 
 end

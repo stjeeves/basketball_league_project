@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry-byebug')
 
 class Team
 
@@ -11,7 +12,8 @@ class Team
     @wins = options['wins']
     @losses = options['losses']
   end
-
+#can remove wins and losses from here and get this information from results table
+#to prevent duplicating data
 def save()
   sql = "INSERT INTO teams
         (
@@ -69,12 +71,18 @@ def self.find_by_id(id)
 end
 
 def matches_played
-    sql = "SELECT teams.* FROM teams
-           INNER JOIN results ON results.team_id = team_id WHERE match_id = $1"
+    sql = "SELECT matches.* FROM matches
+           INNER JOIN results ON results.match_id = match_id WHERE match_id = $1"
            values = [@id]
-           stars = SqlRunner.run(sql, values)
+           teams = SqlRunner.run(sql, values)
            results = teams.map{ |team| Team.new(team)}
            return results
   end
+
+# team1 = Team.new({'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
+#
+# binding.pry
+# nil
+
 
 end
