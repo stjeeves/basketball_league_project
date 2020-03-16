@@ -32,4 +32,13 @@ class Match
     SqlRunner.run(sql)
   end
 
+  def teams
+      sql = "SELECT matches.* FROM matches
+             INNER JOIN results ON results.match_id = match_id WHERE team_id = $1"
+             values = [@id]
+             stars = SqlRunner.run(sql, values)
+             results = matches.map{ |match| Match.new(match)}
+             return results
+    end
+
 end

@@ -68,4 +68,13 @@ def self.find_by_id(id)
   return results
 end
 
+def matches_played
+    sql = "SELECT teams.* FROM teams
+           INNER JOIN results ON results.team_id = team_id WHERE match_id = $1"
+           values = [@id]
+           stars = SqlRunner.run(sql, values)
+           results = teams.map{ |team| Team.new(team)}
+           return results
+  end
+
 end
