@@ -23,7 +23,7 @@ team4.save()
 
 match1.save()
 match2.save()
-match2.save()
+match3.save()
 match4.save()
 
 result1 = Result.new({'team_id' => team1.id, 'match_id' => match1.id})

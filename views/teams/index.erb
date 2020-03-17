@@ -1,7 +1,11 @@
-<h1>Teams</h1>
+<h2>Teams</h2>
 
-<% @teams.each do |team| %>
-<p>Team Name:<%= team.name %> </p>
-<p>Wins: <%= team.wins %></p>
-<p>Losses: <%= team.losses %></p>
-<% end %>
+<main class="flex-item main">
+
+  <% @teams.each do |team| %>
+  <p>Team Name: <%= team.name %> </p>
+  <p>Wins: <%= team.wins %></p>
+  <p>Losses: <%= team.losses %></p>
+  <% end %>
+
+</main>

@@ -2,28 +2,31 @@
 <html>
   <head>
     <title>Basketball!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>Edinburgh Basketball League</header>
-    <nav>
-      <details>
-        <summary>Teams</summary>
-          <a href="/teams"> View All Teams</a>
-          <a href="/teams/new">Create New Team</a>
-      </details>
-      <details>
-        <summary>Matches</summary>
-          <a href="/matches">View All Matches</a>
-          <a href="/matches/new">Create New Match</a>
-      </details>
-      <details>
-        <summary>Contact Us</summary>
-          <p>E-Mail: basket@ball.com</p>
-          <p>Phone: 01234567890</p>
-      </details>
-    </nav>
-    <%= yield %>
-    <footer>Copyright SW 2020</footer>
+    <section class="flexpitem container">
+      <header class="flex-item header">Edinburgh Basketball League</header>
+      <nav class="flex-item nav">
+        <details>
+          <summary>Teams</summary>
+            <a href="/teams"> View All Teams</a>
+            <a href="/teams/new">Create New Team</a>
+        </details>
+        <details>
+          <summary>Matches</summary>
+            <a href="/matches">View All Matches</a>
+            <a href="/matches/new">Create New Match</a>
+        </details>
+        <details>
+          <summary>Contact Us</summary>
+            <p>E-Mail: basket@ball.com</p>
+            <p>Phone: 01234567890</p>
+        </details>
+      </nav>
+      <%= yield %>
+      <footer class="flex-item footer">Copyright SW 2020</footer>
+    </section>
   </body>
 </html>
