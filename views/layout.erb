@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Edinburgh Basketball League</h1>
+    <header>Edinburgh Basketball League</header>
     <nav>
       <details>
         <summary>Teams</summary>
@@ -17,7 +17,13 @@
           <a href="/matches">View All Matches</a>
           <a href="/matches/new">Create New Match</a>
       </details>
+      <details>
+        <summary>Contact Us</summary>
+          <p>E-Mail: basket@ball.com</p>
+          <p>Phone: 01234567890</p>
+      </details>
     </nav>
     <%= yield %>
+    <footer>Copyright SW 2020</footer>
   </body>
 </html>

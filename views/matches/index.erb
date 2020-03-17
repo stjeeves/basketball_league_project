@@ -1,5 +1,8 @@
-<h1>Matches</h1>
+<main>
+  <h1>Matches</h1>
 
-<% @matches.each do |match| %>
-<p><%= match.home_team %> vs <%= match.away_team %></p>
-<% end %>
+  <% @matches.each do |match| %>
+  <p><%= match.home_team %> <%= match.home_score %> -  <%= match.away_score %> <%= match.away_team %></p>
+  <% end %>
+
+</main>

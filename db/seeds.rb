@@ -28,14 +28,14 @@ match4.save()
 
 result1 = Result.new({'team_id' => team1.id, 'match_id' => match1.id})
 result2 = Result.new({'team_id' => team3.id, 'match_id' => match2.id})
-# result3 = Result.new({'team_id' => team1.id, 'match_id' => match3.id})
-# result4 = Result.new({'team_id' => team2.id, 'match_id' => match4.id})
+result3 = Result.new({'team_id' => team1.id, 'match_id' => match3.id})
+result4 = Result.new({'team_id' => team2.id, 'match_id' => match4.id})
 
 
 result1.save()
 result2.save()
-# result3.save()
-# result4.save()
+result3.save()
+result4.save()
 
 # binding.pry
 # nil
