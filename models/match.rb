@@ -3,26 +3,32 @@ require_relative('../db/sql_runner')
 class Match
 
 
-  attr_accessor :home_team, :away_team
+  attr_accessor :home_team, :away_team, :home_score, :away_score
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id'].to_i
     @home_team = options['home_team']
     @away_team = options['away_team']
+    @home_score = options['home_score']
+    @away_score = options ['away_score']
   end
 
   def save()
     sql = "INSERT INTO matches
           (
             home_team,
-            away_team)
+            away_team,
+            home_score,
+            away_score)
           VALUES (
             $1,
-            $2
+            $2,
+            $3,
+            $4
             )
             RETURNING *"
-    values = [@home_team, @away_team]
+    values = [@home_team, @away_team, @home_score, @away_score]
     match_data = SqlRunner.run(sql, values)
     @id = match_data.first['id'].to_i
   end

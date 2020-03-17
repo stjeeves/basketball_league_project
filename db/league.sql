@@ -13,7 +13,9 @@ CREATE TABLE teams (
 CREATE TABLE matches (
   id SERIAL PRIMARY KEY,
   home_team VARCHAR(255),
-  away_team VARCHAR(255)
+  away_team VARCHAR(255),
+  home_score INT,
+  away_score INT
 );
 
 CREATE TABLE results (
