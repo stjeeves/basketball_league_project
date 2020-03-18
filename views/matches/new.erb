@@ -1,16 +1,23 @@
-<form action="/matches" method="post" class="form">
-  <label for="home_team"> Home Team: </label>
-  <input type="text" name="home_team" id="home_team"/>
-
-  <label for="away_team"> Away Team </label>
-  <input type="text" name="away_team" id="away_team">
-
-  <label for="home_score"> Home Score </label>
-  <input type="text" name="home_score" id="home_score">
-
-  <label for="away_score"> Away Score </label>
-  <input type="text" name="away_score" id="away_score">
-
-  <input type="submit" value="Create Match">
-
+<form action="/matches" method="post" class="form" id="match-form">
+  <ul>
+    <li>
+      <label for="home_team"> Home Team: </label>
+      <input type="text" name="home_team" id="home_team"/>
+    </li>
+    <li>
+      <label for="away_team"> Away Team </label>
+      <input type="text" name="away_team" id="away_team">
+    </li>
+    <li>
+      <label for="home_score"> Home Score </label>
+      <input type="text" name="home_score" id="home_score">
+    </li>
+    <li>
+      <label for="away_score"> Away Score </label>
+      <input type="text" name="away_score" id="away_score">
+    </li>
+    <li>
+      <input id="new-team-btn" type="submit" value="Create Match">
+    </li>
+  </ul>
 </form>

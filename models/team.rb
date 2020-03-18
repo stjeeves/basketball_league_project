@@ -85,18 +85,21 @@ def matches_played
            # just the matches they've played
   end
 
-team1 = Team.new({'id' => 1, 'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
+# team1 = Team.new({'id' => 1, 'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
 
 
-def winner()
+def wins()
+  #check the results table for the relevant team_id
+  #return the amount it appears as an array
+  #count the amount of appearances in the array
   sql = "SELECT * FROM results WHERE team_id = $1"
   values = [@id]
-  wins = SqlRunner.run(sql, values).first
+  wins = SqlRunner.run(sql, values)
   return wins.count
 end
 
-binding.pry
-nil
+# binding.pry
+# nil
 
 
 end
