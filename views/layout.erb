@@ -7,22 +7,30 @@
   </head>
   <body>
     <section class="flexpitem container">
-      <header class="flex-item header">Edinburgh Basketball League</header>
+      <header id = "header" class="flex-item header">
+        <a href="/">Edinburgh and Midlothian Basketball League</a>
+      </header>
       <nav class="flex-item nav">
         <details>
           <summary>Teams</summary>
-            <a href="/teams"> View All Teams</a>
-            <a href="/teams/new">Create New Team</a>
+          <ul>
+            <li><a href="/teams"> View All Teams</a></li>
+            <li><a href="/teams/new">Create New Team</a></li>
+          </ul>
         </details>
         <details>
           <summary>Matches</summary>
-            <a href="/matches">View All Matches</a>
-            <a href="/matches/new">Create New Match</a>
+          <ul>
+            <li>  <a href="/matches">View All Matches</a></li>
+            <li><a href="/matches/new">Create New Match</a></li>
+          </ul>
         </details>
         <details>
           <summary>Contact Us</summary>
-            <p>E-Mail: basket@ball.com</p>
-            <p>Phone: 01234567890</p>
+          <ul>
+            <li>E-Mail: basket@ball.com</li>
+            <li>Phone: 01234567890</li>
+          </ul>
         </details>
       </nav>
       <%= yield %>

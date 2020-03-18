@@ -1,5 +1,7 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
+  /* color: #FEFFFE;
+  background: #86131C; */
 }
 
 .flex-container {
@@ -16,19 +18,56 @@ body {
 .header,
 .footer  {
   flex: 1 100%;
+  color: #FEFFFE;
+  background: #86131C;
+  width: 100%;
+  border: 3px #5E0B15;
 }
 
-.main {
+.header {
+
+  height: 50px;
+  font-size: 40px;
+  border: 3px #5E0B15;
+}
+
+.h2, .main, .form, .show {
   flex: 2;
+  color: #FEFFFE;
+  background: #86131C;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  border: 3px #5E0B15;
 }
 
-.flex-item {
+/* .flex-item {
   background: #86131C;
   padding: 10px;
   width: 500px;
-  border: 3px solid rgba(0,0,0,.2);
+  border: 3px  rgba(0,0,0,.2);
   color: #FEFFFE;
-  font-weight: bold;
   font-size: 2em;
   text-align: left;
+} */
+
+
+a {
+  text-decoration: none;
+  color: #FEFFFE;
 }
+
+.nav {
+  flex: 1 100%;
+  width: 200px;
+  height:300px;
+  color: #FEFFFE;
+  background: #86131C;
+  border: 3px #5E0B15;
+}
+
+/* h2 {
+  margin: auto;
+  color: #FEFFFE;
+  background: #86131C;
+} */

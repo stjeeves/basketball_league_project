@@ -1,9 +1,12 @@
-<p>Team Name:<%=  @team.name %></p>
-<p>Wins: <%= @team.wins %></p>
-<p>Losses: <%= @team.losses %></p>
+<div class="show">
 
-<p>Matches Played <%= @team.matches_played %></p>
+  <p>Team Name:<%=  @team.name %></p>
+  <p>Wins: <%= @team.wins %></p>
+  <p>Losses: <%= @team.losses %></p>
 
-<a href="/teams/<%= @team.id %>/edit">Edit Team</a>
+  <p>Matches Played <%= @team.matches_played %></p>
 
-<a href="/teams/<%= @team.id %>/delete">Delete Team</a>
+  <a href="/teams/<%= @team.id %>/edit">Edit Team</a>
+
+  <a href="/teams/<%= @team.id %>/delete">Delete Team</a>
+</div>
