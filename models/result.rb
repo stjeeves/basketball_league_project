@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('team')
 require_relative('match')
+require('pry-byebug')
 
 class Result
 
@@ -36,11 +37,10 @@ class Result
     SqlRunner.run(sql, values)
   end
 
-  def winner()
-    sql = "SELECT * FROM results WHERE team_id = $1"
-    values = [@team_id]
-    team = SqlRunner.run(sql, values).first
-    return Team.new(team)
-  end
+
+  #
+  # binding.pry
+  # nil
+
 
 end

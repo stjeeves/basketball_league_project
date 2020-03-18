@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('result')
 require('pry-byebug')
 
 
@@ -73,20 +74,29 @@ end
 
 def matches_played
     sql = "SELECT matches.* FROM matches
-           INNER JOIN results ON results.match_id = match_id WHERE results.team_id = $1"
+           INNER JOIN results
+           ON results.match_id = matches.id WHERE results.team_id = $1"
            values = [@id]
            matches = SqlRunner.run(sql, values)
            results = matches.map{ |match| Match.new(match)}
-           return results#.select { |match| match.include?(id)}
+           return results
 
            #is returning an array of of all matches. need to be able to show the
            # just the matches they've played
   end
 
-# team1 = Team.new({'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
-#
-# binding.pry
-# nil
+team1 = Team.new({'id' => 1, 'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
+
+
+def winner()
+  sql = "SELECT * FROM results WHERE team_id = $1"
+  values = [@id]
+  wins = SqlRunner.run(sql, values).first
+  return wins.count
+end
+
+binding.pry
+nil
 
 
 end

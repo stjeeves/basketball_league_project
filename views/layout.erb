@@ -6,26 +6,26 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section class="flexpitem container">
+    <section class="flex-item container">
       <header id = "header" class="flex-item header">
         <a href="/">Edinburgh and Midlothian Basketball League</a>
       </header>
-      <nav class="flex-item nav">
-        <details id="details1">
+      <nav class="flex-item nav" id="main-nav">
+        <details class="details" id="details1">
           <summary>Teams</summary>
           <ul>
             <li><a href="/teams"> View All Teams</a></li>
             <li><a href="/teams/new">Create New Team</a></li>
           </ul>
         </details>
-        <details id="details2">
+        <details class="details" id="details2">
           <summary>Matches</summary>
           <ul>
             <li>  <a href="/matches">View All Matches</a></li>
             <li><a href="/matches/new">Create New Match</a></li>
           </ul>
         </details>
-        <details id= "details3">
+        <details class="details" id= "details3">
           <summary>Contact Us</summary>
           <ul>
             <li>E-Mail: basket@ball.com</li>
@@ -34,7 +34,7 @@
         </details>
       </nav>
       <%= yield %>
-      <footer class="flex-item footer">Copyright SW 2020</footer>
+      <footer class="flex-item footer" id="footer">Copyright SW 2020</footer>
     </section>
   </body>
 </html>
