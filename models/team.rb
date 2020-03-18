@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require('pry-byebug')
 
+
 class Team
 
   attr_accessor :name, :wins, :losses
@@ -72,18 +73,20 @@ end
 
 def matches_played
     sql = "SELECT matches.* FROM matches
-           INNER JOIN results ON results.match_id = match_id WHERE match_id = $1"
+           INNER JOIN results ON results.match_id = match_id WHERE results.team_id = $1"
            values = [@id]
-           teams = SqlRunner.run(sql, values)
-           results = teams.map{ |team| Team.new(team)}
-           return results
-           #is returning an array of stuff. need to be able to show the matches themselves.
+           matches = SqlRunner.run(sql, values)
+           results = matches.map{ |match| Match.new(match)}
+           return results#.select { |match| match.include?(id)}
+
+           #is returning an array of of all matches. need to be able to show the
+           # just the matches they've played
   end
 
-team1 = Team.new({'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
-
-binding.pry
-nil
+# team1 = Team.new({'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
+#
+# binding.pry
+# nil
 
 
 end
