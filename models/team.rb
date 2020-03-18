@@ -74,9 +74,9 @@ def matches_played
     sql = "SELECT matches.* FROM matches
            INNER JOIN results ON results.match_id = match_id WHERE match_id = $1"
            values = [@id]
-           p teams = SqlRunner.run(sql, values)
-           p results = teams.map{ |team| Team.new(team)}
-           #return results
+           teams = SqlRunner.run(sql, values)
+           results = teams.map{ |team| Team.new(team)}
+           return results
   end
 
 # team1 = Team.new({'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
