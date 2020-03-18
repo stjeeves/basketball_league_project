@@ -46,7 +46,7 @@ class Match
   end
 
   def teams
-      sql = "SELECT matches.* FROM matches
+      sql = "SELECT teams.* FROM teams
              INNER JOIN results ON results.match_id = match_id WHERE team_id = $1"
              values = [@id]
              stars = SqlRunner.run(sql, values)

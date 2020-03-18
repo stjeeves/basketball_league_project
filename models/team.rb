@@ -77,12 +77,13 @@ def matches_played
            teams = SqlRunner.run(sql, values)
            results = teams.map{ |team| Team.new(team)}
            return results
+           #is returning an array of stuff. need to be able to show the matches themselves.
   end
 
-# team1 = Team.new({'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
-#
-# binding.pry
-# nil
+team1 = Team.new({'name' => 'Leith Honey Badgers', 'wins' => 0,'losses' => 0})
+
+binding.pry
+nil
 
 
 end
