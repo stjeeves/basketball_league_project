@@ -1,4 +1,6 @@
-## Sports Scoring app
+## Basketball Scoring app
+
+### The Brief
 
 Build an app that lets a sports fan keep track of their favourite sports league.
 
@@ -14,3 +16,18 @@ As a huge fan of basketball, you want to stay up to date with the league. You're
 * Create a league table to see who is on top of the league
 * Add players to teams and let them have match stats (points won, fouls, etc.)
 * Anything else you can think of
+
+### The Outcome
+
+### Key Features
+
+- Users can easily view information about the teams in the league, individually or all at once.
+- Teams can be edited or deleted directly from the app.
+- Teams wins can be updated.
+- Matches can be viewed and created. Viewing a match will show you the winner.
+
+
+
+
+
+
