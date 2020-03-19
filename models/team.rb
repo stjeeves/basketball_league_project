@@ -79,7 +79,7 @@ def matches_played
            values = [@id]
            matches = SqlRunner.run(sql, values)
            results = matches.map{ |match| Match.new(match)}
-           return results
+           return results[0]
 
            #is returning an array of of all matches. need to be able to show the
            # just the matches they've played
