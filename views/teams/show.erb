@@ -8,6 +8,8 @@
 
   <p>Matches Played <%= @team.matches_played[0] %></p>
 
+  <p>Losses: <%= @team.losses %></p>
+
   <button type="button" name="button"><a class="button-a" href="/teams/<%= @team.id %>/edit">Edit Team</a></button>
 
   <button type="button" name="button"><a class="button-a" href="/teams/<%= @team.id %>/delete">Delete Team</a></button>

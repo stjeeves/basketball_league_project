@@ -79,7 +79,7 @@ def matches_played
            values = [@id]
            matches = SqlRunner.run(sql, values)
            results = matches.map{ |match| Match.new(match)}
-           return results[0]
+           return results.count
 
            #is returning an array of of all matches. need to be able to show the
            # just the matches they've played
@@ -100,6 +100,14 @@ end
 
 # binding.pry
 # nil
+
+def losses()
+  #check the total games played for the team
+  #subtract the total wins from total matches played
+  #result is the total losses
+  losses = team.matches_played -= team.wins
+  return losses
+end
 
 
 end

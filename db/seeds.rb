@@ -15,6 +15,8 @@ match1 = Match.new({'home_team' => 'Leith Honey Badgers', 'away_team' => 'Edinbu
 match2 = Match.new({'home_team' => 'Edinburgh Soldier Bears', 'away_team' => 'Edinburgh Iberians', 'home_score' => 54, 'away_score' => 41})
 match3 = Match.new({'home_team' => 'Edinburgh Iberians', 'away_team' => 'Leith Honey Badgers', 'home_score' => 58, 'away_score' => 69})
 match4 = Match.new({'home_team' => 'Edinburgh Titans', 'away_team' => 'Edinburgh Soldier Bears', 'home_score' => 51, 'away_score' => 37})
+match5 = Match.new({'home_team' => 'Leith Honey Badgers', 'away_team' => 'Edinburgh Soldier Bears', 'home_score' => 64, 'away_score' => 49})
+match6 = Match.new({'home_team' => 'Edinburgh Titans', 'away_team' => 'Edinburgh Iberians', 'home_score' => 52, 'away_score' => 38})
 
 team1.save()
 team2.save()
@@ -25,17 +27,23 @@ match1.save()
 match2.save()
 match3.save()
 match4.save()
+match5.save()
+match6.save()
 
 result1 = Result.new({'team_id' => team1.id, 'match_id' => match1.id})
 result2 = Result.new({'team_id' => team3.id, 'match_id' => match2.id})
 result3 = Result.new({'team_id' => team1.id, 'match_id' => match3.id})
 result4 = Result.new({'team_id' => team2.id, 'match_id' => match4.id})
+result5 = Result.new({'team_id' => team1.id, 'match_id' => match5.id})
+result6 = Result.new({'team_id' => team2.id, 'match_id' => match6.id})
 
 
 result1.save()
 result2.save()
 result3.save()
 result4.save()
+result5.save()
+result6.save()
 
 # binding.pry
 # nil
